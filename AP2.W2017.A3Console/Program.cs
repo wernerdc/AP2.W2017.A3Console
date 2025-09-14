@@ -4,7 +4,7 @@ namespace AP2.W2017.A3Console
 {
     internal class Program
     {
-        static bool[,] kino = new bool[0,0];
+        static bool[,] kino = new bool[0, 0];
 
         static void Main(string[] args)
         {
@@ -17,7 +17,7 @@ namespace AP2.W2017.A3Console
 
             int anzahl = 6;
             int sitzNr = FreieSitze(anzahl);
-            
+
             Console.WriteLine($"{anzahl} freie Sitze ab Platz: {sitzNr} \n");
             ks.ToConsole(sitzNr, anzahl);
 
@@ -36,11 +36,12 @@ namespace AP2.W2017.A3Console
 
                 for (int i = 0; i < 30; i++)
                 {
-                    if (kino[r,i])
+                    if (kino[r, i])
                     {
                         if (count == 0)
+                        {
                             firstSeat = row + i + 1;
-                    
+                        }
                         count++;
                     }
                     else
@@ -49,7 +50,9 @@ namespace AP2.W2017.A3Console
                     }
 
                     if (count >= anzahlSitze)
+                    {
                         return firstSeat;
+                    }
                 }
             }
 
